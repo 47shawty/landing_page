@@ -1,0 +1,10 @@
+{% load static %}
+
+<div class="products-list">
+    <h2>Продукты</h2>
+    {% for product in products %}
+        <ul>
+            <li><a href="{% url 'main:productdetail_url' product.slug %}">{{ product.title }}</a></li>
+        </ul>
+    {% endfor %}
+</div>

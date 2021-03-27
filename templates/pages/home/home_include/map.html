@@ -1,0 +1,14 @@
+{% load static %}
+
+
+<div id="map" data-latitude="{{ lat }}" data-longitude="{{ long }}"></div>
+<h2>Отправить сообщение</h2>
+<form id="form" method="post" action="{% url 'main:contact_url' %}">
+    {% csrf_token %}
+    <input type="text" placeholder="Ваше имя" class="text-box" id="name" name="name" onfocus="blurEvent(this)"
+           onkeyup="onChangeEvent(this)">
+    <input type="text" placeholder="Электронная почта" class="text-box" id="email" name="email"
+           onfocus="blurEvent(this)"
+           onkeyup="onChangeEvent(this)">
+    <input type="submit" value="Отправить" class="button" onclick="event.preventDefault();onSubmitEvent()">
+</form>

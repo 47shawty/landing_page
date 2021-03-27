@@ -1,0 +1,17 @@
+{% load static %}
+
+
+<h1>{{ head.title }}</h1>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="{{ head.image.url }}" alt="Первая картинка"></div>
+        <div class="swiper-slide"><img src="{{ head.image_second.url }}" alt="Вторая картинка"></div>
+        <div class="swiper-slide"><img src="{{ head.image_third.url }}" alt="Третья картинка"></div>
+        {#            <div class="swiper-slide"><img src="{{ head.image }}" alt="Четвертая картинка"></div>#}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+<div class="intro-text{% comment %}{% endcomment %}">
+    <p>{{ head.description|safe }}</p>
+</div>

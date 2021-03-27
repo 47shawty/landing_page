@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="wrapper">
+        <div class="content">
+            <a href="{% url 'main:home_url' %}" class="go-back">На главную</a>
+            <h1>{{ product.title }}</h1>
+            <img src="{{ product.image.url }}" alt="Какой-то продукт" class="product-image">
+            <div class="product-info">
+                <div class="product-info-item">
+                    {% if product.first_list_title %}
+                        <h2>{{ product.first_list_title }}</h2>
+                    {% endif %}
+                    {% if product.first_list %}
+                        <ul>
+                            <li>{{ product.first_list|safe }}</li>
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="product-info-item">
+                    {% if product.second_list_title %}
+                        <h2>{{ product.second_list_title }}</h2>
+                    {% endif %}
+                    {% if product.second_list %}
+                        <ul>
+                            <li>{{ product.second_list|safe }}</li>
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="product-info-item">
+                    {% if product.third_list_title %}
+                        <h2>{{ product.third_list_title }}</h2>
+                    {% endif %}
+                    {% if product.third_list %}
+                        <ul>
+                            <li>{{ product.third_list|safe }}</li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
